@@ -1,4 +1,4 @@
-# token-distribution 
+# Paradise Token Sale 
 Token and crowd sale smart contracts
 Paradise Token Token Sale
 This document gives an overview of the smart contracts used for Paradise token and Crowdsales.
