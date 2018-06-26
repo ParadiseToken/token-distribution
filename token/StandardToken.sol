@@ -1,5 +1,9 @@
 pragma solidity ^0.4.21;
 
+import './BasicToken.sol';
+import './ERC20.sol';
+
+
 /**
  * @title Standard ERC20 token
  *
