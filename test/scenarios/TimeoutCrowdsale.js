@@ -55,8 +55,6 @@ async function logEthBalances (token, sale, accounts) {
 
 
 
-
-
 contract('Missed-deadline Crowdsale', function(accounts) {
   // account[0] points to the owner on the testRPC setup
   var owner = accounts[0];
