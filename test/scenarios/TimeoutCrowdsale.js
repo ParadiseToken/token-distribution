@@ -1,11 +1,7 @@
 
 var ParadiseTokenSale = artifacts.require("./ParadiseTokenSale.sol");
 var ParadiseToken = artifacts.require("./ParadiseToken.sol");
-
 var ParadiseTokenSaleMock = artifacts.require('./helpers/ParadiseTokenSaleMock.sol');
-
-
-
 var bigInt = require("big-integer");
 
 
@@ -54,7 +50,6 @@ async function logEthBalances (token, sale, accounts) {
 }
 
 
-
 contract('Missed-deadline Crowdsale', function(accounts) {
   // account[0] points to the owner on the testRPC setup
   var owner = accounts[0];
@@ -66,7 +61,7 @@ contract('Missed-deadline Crowdsale', function(accounts) {
 
   beforeEach(function() {
     return ParadiseTokenSale.deployed().then(function(instance) {
-        sale = instance;
+        offering = instance;
         return ParadiseToken.deployed();
     }).then(function(instance2){
       token = instance2;
@@ -87,16 +82,16 @@ contract('Missed-deadline Crowdsale', function(accounts) {
 
   it("should accept 2 ether for the crowdsale", async function() {
       // 0 indicates all crowdsale tokens
-      await token.setTokenOffering(sale.address, 0); // ensures crowdsale has allowance of tokens
+      await token.setTokenOffering(offering.address, 0); // ensures crowdsale has allowance of tokens
 
       var amountEther = 2;
       var amountWei = web3.toWei(amountEther, "ether");
 
-      let allowance = (await token.allowance(tokenOwner, sale.address)).toNumber();
+      let allowance = (await token.allowance(tokenOwner, offering.address)).toNumber();
 
-      await sale.sendTransaction({from: user2,  value: web3.toWei(amountEther, "ether")});
+      await offering.sendTransaction({from: user2,  value: web3.toWei(amountEther, "ether")});
 
-      let allowanceAfter = (await token.allowance(tokenOwner, sale.address)).toNumber();
+      let allowanceAfter = (await token.allowance(tokenOwner, offering.address)).toNumber();
       let user2BalanceAfter = (await token.balanceOf(user2)).toNumber();
       let ownerBalanceAfter = (await token.balanceOf(owner)).toNumber();
 
@@ -113,25 +108,25 @@ contract('Missed-deadline Crowdsale', function(accounts) {
       var amountEther = 2;
       var amountWei = web3.toWei(amountEther, "ether");
 
-      let sale2 = await ParadiseTokenSaleMock.new(accounts[1], 10, 20, 1, time, 2, 15000, token.address);
-      await token.setTokenOffering(sale2.address, 0); // ensures crowdsale has allowance of tokens
+      let offering2 = await ParadiseTokenSaleMock.new(accounts[1], 10, 20, 1, time, 2, 15000, token.address);
+      await token.setTokenOffering(offering2.address, 0); // ensures crowdsale has allowance of tokens
 
-      let nowtest = await sale2._now();
+      let nowtest = await offering2._now();
 
-      let currentTime = (await sale2.currentTime());
-      //let startTime = (await sale2.)
+      let currentTime = (await offering2.currentTime());
+      //let startTime = (await offering2.)
 
       currentTime = currentTime.toNumber();
-      let endTime = await sale2.endTime();
+      let endTime = await offering2.endTime();
 
-      await sale2.sendTransaction({from: user2,  value: web3.toWei(amountEther, "ether")});
+      await offering2.sendTransaction({from: user2,  value: web3.toWei(amountEther, "ether")});
 
-      await sale2.changeTime(futureTime);
+      await offering2.changeTime(futureTime);
 
-      let afterTime = (await sale2.currentTime());
+      let afterTime = (await offering2.currentTime());
 
       try{
-          await sale2.sendTransaction({from: user2,  value: web3.toWei(amountEther, "ether")});
+          await offering2.sendTransaction({from: user2,  value: web3.toWei(amountEther, "ether")});
       }
       catch (e){
         return true;
