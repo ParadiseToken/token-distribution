@@ -13,8 +13,6 @@ var ParadiseTokenSale = artifacts.require("./ParadiseTokenSale.sol");
 module.exports = function(deployer, network, accounts) {
     //console.log("Accounts: " + accounts);
     
-    var userAddress = accounts[1];
-
     deployer.deploy(SafeMath);
     deployer.deploy(Ownable);
     deployer.link(Ownable, Pausable);
