@@ -25,19 +25,19 @@ import '../ParadiseTokenSale.sol';
         uint durationInMinutes,
         uint ratePDTToEther,
         address addressOfTokenUsedAsReward
-    ) ParadiseTokenSale(ifSuccessfulSendTo, fundingGoalInEthers, fundingCapInEthers,
+    ) public ParadiseTokenSale(ifSuccessfulSendTo, fundingGoalInEthers, fundingCapInEthers,
                      minimumContributionInWei, start, durationInMinutes, ratePDTToEther,
                      addressOfTokenUsedAsReward){ 
         _now = start + 1;
     }
 
-    function currentTime() constant public returns (uint) {
+    function currentTime() view public returns (uint) {
         return _now;
     }
 
     event HitLine(uint key, uint val);
     function changeTime(uint _newTime) onlyOwner external {
-        HitLine(123, _newTime);
+        emit HitLine(123, _newTime);
         _now = _newTime;
     }
 }
