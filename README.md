@@ -1,10 +1,10 @@
 # Paradise Token Sale 
-This document gives an overview of the smart contracts used for Paradise token and Crowdsales.
+This document gives an overview of the smart contracts used for Paradise Token and Crowdsales.
 
 # Overview
 
 ## Paradise Token
-The Paradise token smart contract `ParadiseToken.sol` is ERC20-compatible and has the following additional characteristics:
+The Paradise Token smart contract `ParadiseToken.sol` is ERC20-compatible and has the following additional characteristics:
 
   1. A fixed supply of pre-minted tokens
   2. During the token sale period, regular users can transfer tokens
