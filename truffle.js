@@ -1,7 +1,7 @@
 
 var HDWalletProvider = require("truffle-hdwallet-provider");
 var infura_apikey = "< KEY >"; // Get yours at https://infura.io/signup. It's free.
-var mnemonic = "< REPLACE THIS WITH YOUR METAMASK SEED PHRASES >"; 
+var mnemonic = "< REPLACE THIS WITH YOUR WALLET SEED PHRASES >"; 
 
 module.exports = {
   networks: {
