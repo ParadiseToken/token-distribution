@@ -11,7 +11,6 @@ var ParadiseTokenSale = artifacts.require("./ParadiseTokenSale.sol");
 
 
 module.exports = function(deployer, network, accounts) {
-    // Use the accounts within your migrations.
     //console.log("Accounts: " + accounts);
     
     var userAddress = accounts[1];
@@ -27,7 +26,6 @@ module.exports = function(deployer, network, accounts) {
 
     deployer.deploy(StandardToken);
     deployer.link(StandardToken, BasicToken);
-    deployer.link(StandardToken, ERC20);
 
     deployer.deploy(ParadiseToken, userAddress);
     deployer.link(ParadiseToken, StandardToken);
