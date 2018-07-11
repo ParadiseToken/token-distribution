@@ -19,7 +19,7 @@ contract ParadiseTokenSale is Pausable {
     using SafeMath for uint256;
 
     // The beneficiary is the future recipient of the funds
-    address public beneficiary = 0xF3664F69916bc3DeCcd9f37e31d8ecB8985F0BE7;
+    address public beneficiary;
 
     // The crowdsale has a funding goal, cap, deadline, and minimum contribution
     uint public fundingGoal = 1000 ether;   // Base on 680$ per ether
@@ -30,8 +30,8 @@ contract ParadiseTokenSale is Pausable {
     bool public saleClosed = false;
 
     // Time period of sale (UNIX timestamps)
-    uint public startTime = 1528735903; // Monday, June 11, 2018 04:51:43 PM UTC+0200 (CEST)
-    uint public endTime = 1531328203;  //  Wednesday, July 11, 2018 04:57:27 PM UTC+0200 (CEST)
+    uint public startTime;
+    uint public endTime;
 
     // Keeps track of the amount of wei raised
     uint public amountRaised;
