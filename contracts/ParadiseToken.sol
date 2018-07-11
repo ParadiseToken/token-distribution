@@ -22,7 +22,7 @@ contract ParadiseToken is StandardToken, Ownable {
     
     // Properties
     address public adminAddr;              // the number of tokens available for the administrator
-    address public tokenAllowanceAddr = 0x9A4518ad59ac1D0Fc9A77d9083f233cD0b8d77Fa; // the number of tokens available for crowdsales
+    address public tokenAllowanceAddr;     // the number of tokens available for crowdsales
     bool public transferEnabled = false;   // indicates if transferring tokens is enabled or not
     
     
