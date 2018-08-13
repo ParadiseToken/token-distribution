@@ -40,7 +40,7 @@ The Paradise Token crowdsale smart contract may be used to sell PDT tokens. To b
 
 ### Main Sale
 
-On June, 2018 @ 5PM UTC and ending on July (or when sold old, whichever comes first), Paradise Token will have a maine sale for the PDT token. The conversion rate from PDT to ETH will change during the course of the maine sale according to the following schedule.
+On September, 2018 @ 5PM UTC and ending on October (or when sold old, whichever comes first), Paradise Token will have a maine sale for the PDT token. The conversion rate from PDT to ETH will change during the course of the maine sale according to the following schedule.
 
   * Week 1: `1 ETH = 30,000 PDT`
   * Week 2,3,4: `1 ETH = 15,000 PDT`
