@@ -37,7 +37,7 @@ module.exports = function(deployer, network, accounts) {
     var monkey = 1234;
 
     deployer.deploy(ParadiseToken, accounts[1]).then(function() {
-        return deployer.deploy(ParadiseTokenSale, accounts[1], 10, 20, 1, time, 2, 15000, ParadiseToken.address);
+        return deployer.deploy(ParadiseTokenSale, accounts[1], 10, 20, 1, time, 2, 10000, ParadiseToken.address);
     });
 
 };
