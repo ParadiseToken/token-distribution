@@ -77,7 +77,7 @@ contract('ParadiseTokenSale Constructor', function(accounts) {
     assert.equal(fundingCapInEthers, 20 * (10 ** 18), "funding cap is incorrect");
     assert.equal(minimumContributionInWei, 1, "minimum contribution in wei is incorrect");
     assert.equal(start + 120, end, "end time should be 120 seconds after start time");
-    assert.equal(ratePDTToEther, 15000, "conversion rate from PDT to ETH is incorrect");
+    assert.equal(ratePDTToEther, 10000, "conversion rate from PDT to ETH is incorrect");
   });
 
 });
