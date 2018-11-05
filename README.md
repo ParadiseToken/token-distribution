@@ -40,10 +40,10 @@ The Paradise Token crowdsale smart contract may be used to sell PDT tokens. To b
 
 ### Main Sale
 
-On September, 2018 @ 5PM UTC and ending on October (or when sold old, whichever comes first), Paradise Token will have a maine sale for the PDT token. The conversion rate from PDT to ETH will change during the course of the maine sale according to the following schedule.
+On November, 2018 @ 5PM UTC and ending on December (or when sold old, whichever comes first), Paradise Token will have a maine sale for the PDT token. The conversion rate from PDT to ETH will change during the course of the maine sale according to the following schedule.
 
-  * Week 1: `1 ETH = 21,000 PDT`
-  * Week 2,3,4: `1 ETH = 15,000 PDT`
+  * Week 1: `1 ETH = 14,000 PDT`
+  * Week 2,3,4: `1 ETH = 10,000 PDT`
   
 The `ParadiseTokenSale.sol` file contains the code for a crowdsale. The default fallback function is executed when payment is received. This function will calculate the number of tokens to be distributed to the contributor based on the conversion rate as specified above.
 
