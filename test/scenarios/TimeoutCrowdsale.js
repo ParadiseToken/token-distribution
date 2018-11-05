@@ -108,7 +108,7 @@ contract('Missed-deadline Crowdsale', function(accounts) {
       var amountEther = 2;
       var amountWei = web3.toWei(amountEther, "ether");
 
-      let offering2 = await ParadiseTokenSaleMock.new(accounts[1], 10, 20, 1, time, 2, 15000, token.address);
+      let offering2 = await ParadiseTokenSaleMock.new(accounts[1], 10, 20, 1, time, 2, 10000, token.address);
       await token.setTokenOffering(offering2.address, 0); // ensures crowdsale has allowance of tokens
 
       let nowtest = await offering2._now();
