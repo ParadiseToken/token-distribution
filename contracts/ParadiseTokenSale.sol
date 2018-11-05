@@ -22,8 +22,8 @@ contract ParadiseTokenSale is Pausable {
     address public beneficiary;
 
     // The crowdsale has a funding goal, cap, deadline, and minimum contribution
-    uint public fundingGoal = 1000 ether;   // Base on 680$ per ether
-    uint public fundingCap = 14000 ether;
+    uint public fundingGoal = 7300 ether;   // Base on 230$ per ether
+    uint public fundingCap = 17000 ether;
     uint public minContribution = 10**17;  // 0.1 Ether
     bool public fundingGoalReached = false;
     bool public fundingCapReached = false;
@@ -38,8 +38,8 @@ contract ParadiseTokenSale is Pausable {
 
     // The ratio of PDT to Ether
     uint public rate;
-    uint public constant LOW_RANGE_RATE = 15000;    // 0% bonus
-    uint public constant HIGH_RANGE_RATE = 30000;   // 100% bonus for 1 week
+    uint public constant LOW_RANGE_RATE = 10000;    // 0% bonus
+    uint public constant HIGH_RANGE_RATE = 14000;   // 40% bonus for 1 week
     
     // The token being sold
     ParadiseToken public tokenReward;
